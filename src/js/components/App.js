@@ -5,11 +5,14 @@ import ReactDOM from 'react-dom'
 import {combineReducers, createStore} from 'redux'
 import { Provider } from 'react-redux'
 import BookReducer from '../reducers/reducer_books'
+import ActiveBook from '../reducers/reducer_active_book'
 
 import BookList from '../containers/BookList'
+import BookDetails from '../containers/BookDetails'
 
 const rootReducer = combineReducers({
-  books: BookReducer
+  books: BookReducer,
+  activeBook : ActiveBook
 })
 
 
@@ -28,6 +31,7 @@ class App extends Component {
       <Provider store={store}>
         <div>
           <BookList />
+          <BookDetails />
         </div>
       </Provider>
     )
